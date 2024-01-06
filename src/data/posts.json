@@ -11,6 +11,12 @@
       "title": "JSON-SERVERを学ぶ",
       "content": "JSON-SERVERを勉強中 テストタイトル",
       "createdAt": "2024/1/1"
+    },
+    {
+      "id": "Next.js13 create",
+      "title": "Next.js13の記事投稿",
+      "content": "Next.js13の本文内容",
+      "createdAt": "2024-01-06T11:49:43.988Z"
     }
   ]
 }
