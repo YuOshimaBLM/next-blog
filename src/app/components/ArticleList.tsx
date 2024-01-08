@@ -34,7 +34,7 @@ const ArticleList = ({ articles }: ArticleListProps) => {
               {article.title}
             </Link>
             <p className="text-s, pb-3 text-slate-900">
-              published on {article.createdAt}
+              published on {new Date(article.createdAt).toLocaleString()}
             </p>
             <Link
               href={`articles/${article.id}`}

@@ -1,5 +1,5 @@
 "use client";
-import { createArtcile } from "@/src/data/blogAPI";
+// import { createArtcile } from "@/src/data/blogAPI"; JSON
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -12,10 +12,21 @@ const createBlogPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await createArtcile(id, title, content);
+    // await createArtcile(id, title, content); JSON
+
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    await fetch(`${API_URL}/api/blog`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id, title, content }),
+    });
+
     router.push("/");
     router.refresh();
   };
+
   return (
     <div className="min-h-screen py-8 px-4 md:px-12">
       <h2 className="text-2xl font-bold mb-4">ブログ新規作成</h2>
